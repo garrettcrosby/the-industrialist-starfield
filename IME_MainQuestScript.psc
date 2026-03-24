@@ -235,7 +235,7 @@ EndEvent
 
 Event OnUpdateGameTime()
     CheckDeadlines()
-    Float lastRefresh = IME_LastRefreshTime.GetValueFloat()
+    Float lastRefresh = IME_LastRefreshTime.GetValue() as Float
     Float currentTime = Utility.GetCurrentGameTime()
     If (currentTime - lastRefresh) >= (IME_RefreshIntervalHours / 24.0)
         PopulateSlots()
@@ -432,7 +432,7 @@ Float Function CalculateWinChance(Int aiTier, Int aiBidType)
 
     ; Reputation multiplier
     ; At rep 0 = 1.0x, at rep max(500) = 2.0x, at rep min(-100) = 0.8x
-    Int rep = IME_Reputation.GetValueInt()
+    Int rep = IME_Reputation.GetValue() as Int
     Float repMult = 1.0 + (rep as Float / (IME_Rep_Max as Float))
     If repMult < 0.1
         repMult = 0.1
@@ -575,7 +575,7 @@ Function CalculateAndApplyRepAward(Int aiTier, Int aiBidType, Float aAwardedTime
 EndFunction
 
 Function ModifyReputation(Int aiAmount)
-    Int current = IME_Reputation.GetValueInt()
+    Int current = IME_Reputation.GetValue() as Int
     Int newVal  = current + aiAmount
     If newVal > IME_Rep_Max
         newVal = IME_Rep_Max
@@ -644,7 +644,7 @@ EndFunction
 
 ; Called by exchange terminal to check if refresh is overdue
 Function RefreshIfReady()
-    Float lastRefresh  = IME_LastRefreshTime.GetValueFloat()
+    Float lastRefresh  = IME_LastRefreshTime.GetValue() as Float
     Float currentTime  = Utility.GetCurrentGameTime()
     If (currentTime - lastRefresh) >= (IME_RefreshIntervalHours / 24.0)
         PopulateSlots()
