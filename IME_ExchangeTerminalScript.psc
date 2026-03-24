@@ -195,7 +195,7 @@ Function UpdateActiveContractsDisplay()
 EndFunction
 
 Function UpdateStatusDisplay()
-    Int rep = MainScript.IME_Reputation.GetValueInt()
+    Int rep = MainScript.IME_Reputation.GetValue() as Int
     IME_Display_Rep = rep as String
 
     ; Tier unlock status — show which tiers the player can realistically bid on
