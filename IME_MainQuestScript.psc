@@ -174,16 +174,16 @@ Int Property IME_Tier4_Count = 14 AutoReadOnly
 Int Property IME_Tier5_Count = 7  AutoReadOnly
 
 ; Quantity bounds per tier
-Int Property IME_Tier1_QtyMin = 200  AutoReadOnly
-Int Property IME_Tier1_QtyMax = 500  AutoReadOnly
-Int Property IME_Tier2_QtyMin = 100  AutoReadOnly
-Int Property IME_Tier2_QtyMax = 250  AutoReadOnly
-Int Property IME_Tier3_QtyMin = 30   AutoReadOnly
-Int Property IME_Tier3_QtyMax = 100  AutoReadOnly
-Int Property IME_Tier4_QtyMin = 10   AutoReadOnly
-Int Property IME_Tier4_QtyMax = 30   AutoReadOnly
-Int Property IME_Tier5_QtyMin = 3    AutoReadOnly
-Int Property IME_Tier5_QtyMax = 10   AutoReadOnly
+Int Property IME_Tier1_QtyMin = 3500  AutoReadOnly
+Int Property IME_Tier1_QtyMax = 5000  AutoReadOnly
+Int Property IME_Tier2_QtyMin = 1500  AutoReadOnly
+Int Property IME_Tier2_QtyMax = 2500  AutoReadOnly
+Int Property IME_Tier3_QtyMin = 500   AutoReadOnly
+Int Property IME_Tier3_QtyMax = 1000  AutoReadOnly
+Int Property IME_Tier4_QtyMin = 350   AutoReadOnly
+Int Property IME_Tier4_QtyMax = 750   AutoReadOnly
+Int Property IME_Tier5_QtyMin = 50    AutoReadOnly
+Int Property IME_Tier5_QtyMax = 500   AutoReadOnly
 
 ; Resource name arrays (one per tier)
 String[] IME_Tier1_Names
