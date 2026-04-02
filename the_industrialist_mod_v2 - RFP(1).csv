@@ -1,0 +1,566 @@
+Company,Product,Product Rarity,Industry,Order Quantity Tier,Value,Order Quantity,TCV,Hours to Deliver,RFP Tier
+Nautilus,Helium-3,Uncommon,fuel,1,5,75,375,168,1
+Ryujin,Biosuppressant,Exotic,medical,1,16,25,400,294,1
+Eit Clothiers,Fiber,Common,apparel,1,4,100,400,126,1
+Armco,Water,Common,manufacturing,1,4,100,400,126,1
+Centauri Mills,Water,Common,food,1,4,100,400,126,1
+Filburn Agriculture,Water,Common,food,1,4,100,400,126,1
+Kore Kinetics,Lubricant,Exotic,small arms-ballistic,1,18,25,450,294,1
+Laredo,Lubricant,Exotic,small arms-ballistic,1,18,25,450,294,1
+Celtcorp,Solvent,Exotic,tech,1,19,25,475,294,1
+Armco,Argon,Common,manufacturing,1,5,100,500,126,1
+Celtcorp,Argon,Common,manufacturing,1,5,100,500,126,1
+Chandra Vineyards,Nutrient,Common,food,1,5,100,500,126,1
+Filburn Agriculture,Nutrient,Common,food,1,5,100,500,126,1
+Aboron,Polymer,Exotic,small arms-energy,1,20,25,500,294,1
+Celtcorp,Polymer,Exotic,manufacturing,1,20,25,500,294,1
+Celtcorp,Ionic Liquids,Exotic,tech,1,23,25,575,294,1
+Lunar Robotics,Ionic Liquids,Exotic,tech,1,23,25,575,294,1
+Reliant Medical,Ionic Liquids,Exotic,medical,1,23,25,575,294,1
+Son,Ionic Liquids,Exotic,tech,1,23,25,575,294,1
+Muybridge Pharmaceuticals,Analgesic,Rare,medical,1,12,50,600,210,1
+Ryujin,Carboxylic Acids,Rare,medical,1,12,50,600,210,1
+Celtcorp,Chlorine,Common,tech,1,6,100,600,126,1
+Lunar Robotics,Chlorine,Common,tech,1,6,100,600,126,1
+Son,Chlorine,Common,tech,1,6,100,600,126,1
+Eit Clothiers,Cosmetic,Uncommon,apparel,1,8,75,600,168,1
+Allied Armaments,Sealant,Common,small arms,1,6,100,600,126,1
+Armco,Sealant,Common,manufacturing,1,6,100,600,126,1
+Combatech,Sealant,Common,small arms,1,6,100,600,126,1
+Combatech,Titanium,Rare,small arms,1,12,50,600,210,1
+Argos Extractors,Caesium,Exotic,mining,1,25,25,625,294,1
+Lunar Robotics,Memory Substrate,Unique,tech,1,65,10,650,420,1
+Advanced Nutrition,Gastronomic Delight,Unique,food,1,66,10,660,420,1
+Centauri Mills,Membrane,Uncommon,food,1,9,75,675,168,1
+Chandra Vineyards,Membrane,Uncommon,food,1,9,75,675,168,1
+Xenofresh Fisheries,Membrane,Uncommon,food,1,9,75,675,168,1
+Celtcorp,Xenon,Exotic,manufacturing,1,27,25,675,294,1
+Celtcorp,Aluminum,Common,manufacturing,1,7,100,700,126,1
+Laredo,Aluminum,Common,small arms-ballistic,1,7,100,700,126,1
+Muybridge Pharmaceuticals,Lithium,Rare,medical,1,14,50,700,210,1
+Reliant Medical,Lithium,Rare,medical,1,14,50,700,210,1
+Axion Energy,Structural Material,Common,manufacturing,1,7,100,700,126,1
+Celtcorp,Antimicrobial,Uncommon,tech,1,10,75,750,168,1
+Lunar Robotics,Antimicrobial,Uncommon,tech,1,10,75,750,168,1
+Ryujin,Pigment,Uncommon,apparel,1,10,75,750,168,1
+Kore Kinetics,Iron,Common,small arms-ballistic,1,8,100,800,126,1
+Laredo,Iron,Common,small arms-ballistic,1,8,100,800,126,1
+Xenofresh Fisheries,Toxin,Common,food,1,8,100,800,126,1
+Ryujin,Ornamental Material,Uncommon,apparel,1,11,75,825,168,1
+Centauri Mills,Spice,Uncommon,food,1,11,75,825,168,1
+Chandra Vineyards,Spice,Uncommon,food,1,11,75,825,168,1
+Xenofresh Fisheries,Spice,Uncommon,food,1,11,75,825,168,1
+Consolidated Mining,Aldumite,Unique,mining,1,84,10,840,420,1
+Celtcorp,Beryllium,Uncommon,tech,1,12,75,900,168,1
+Lunar Robotics,Beryllium,Uncommon,tech,1,12,75,900,168,1
+Son,Beryllium,Uncommon,tech,1,12,75,900,168,1
+Allied Armaments,Cobalt,Uncommon,small arms,1,12,75,900,168,1
+Combatech,Cobalt,Uncommon,small arms,1,12,75,900,168,1
+Armco,Fluorine,Uncommon,manufacturing,1,12,75,900,168,1
+Axion Energy,Fluorine,Uncommon,manufacturing,1,12,75,900,168,1
+Centauri Mills,Alkanes,Uncommon,food,1,13,75,975,168,1
+Chandra Vineyards,Alkanes,Uncommon,food,1,13,75,975,168,1
+Filburn Agriculture,Alkanes,Uncommon,food,1,13,75,975,168,1
+Armco,Copper,Common,manufacturing,1,10,100,1000,126,1
+Laredo,Copper,Common,small arms-ballistic,1,10,100,1000,126,1
+Laredo,Lead,Common,small arms-ballistic,1,10,100,1000,126,1
+Celtcorp,Neodymium,Rare,manufacturing,1,20,50,1000,210,1
+Allied Armaments,Nickel,Common,small arms,1,10,100,1000,126,1
+Lunar Robotics,Chlorosilanes,Uncommon,tech,1,14,75,1050,168,1
+Aboron,Iridium,Uncommon,small arms-energy,1,14,75,1050,168,1
+Allied Armaments,Iridium,Uncommon,small arms,1,14,75,1050,168,1
+Combatech,Iridium,Uncommon,small arms,1,14,75,1050,168,1
+Muybridge Pharmaceuticals,Mercury,Rare,medical,1,22,50,1100,210,1
+Consolidated Mining,Tantalum,Rare,mining,1,23,50,1150,210,1
+Six Sisters,Tantalum,Rare,mining,1,23,50,1150,210,1
+Arc Might,Gold,Rare,manufacturing,1,24,50,1200,210,1
+Celtcorp,Gold,Rare,manufacturing,1,24,50,1200,210,1
+Celtcorp,Platinum,Rare,tech,1,24,50,1200,210,1
+Lunar Robotics,Platinum,Rare,tech,1,24,50,1200,210,1
+Armco,Tungsten,Uncommon,manufacturing,1,16,75,1200,168,1
+Six Sisters,Tungsten,Uncommon,mining,1,16,75,1200,168,1
+Allied Armaments,Vanadium,Rare,small arms,1,24,50,1200,210,1
+Combatech,Vanadium,Rare,small arms,1,24,50,1200,210,1
+Celtcorp,Dysprosium,Exotic,manufacturing,1,56,25,1400,294,1
+Ryujin,Dysprosium,Exotic,manufacturing,1,56,25,1400,294,1
+Ryujin,Benzene,Uncommon,medical,1,19,75,1425,168,1
+Armco,Silver,Uncommon,manufacturing,1,20,75,1500,168,1
+Infinity Ltd,Plutonium,Exotic,tech,1,64,25,1600,294,1
+Ryujin,Plutonium,Exotic,tech,1,64,25,1600,294,1
+Ballistics Solutions,Helium-3,Uncommon,fuel,2,5,375,1875,168,1
+Lunar Robotics,Mag Pressure Tank,Uncommon,tech,1,25,75,1875,168,1
+Son,Mag Pressure Tank,Uncommon,tech,1,25,75,1875,168,1
+Xenofresh Fisheries,Mag Pressure Tank,Uncommon,food,1,25,75,1875,168,1
+Armco,Polytextile,Uncommon,manufacturing,1,25,75,1875,168,1
+Celtcorp,Polytextile,Uncommon,manufacturing,1,25,75,1875,168,1
+Axion Energy,Water,Common,manufacturing,2,4,500,2000,126,1
+Ryujin,Hypercatalyst,Exotic,medical,2,18,125,2250,294,1
+Celtcorp,Lubricant,Exotic,manufacturing,2,18,125,2250,294,1
+Arc Might,Solvent,Exotic,manufacturing,2,19,125,2375,294,1
+Infinity Ltd,Solvent,Exotic,tech,2,19,125,2375,294,1
+Armco,Adaptive Frame,Common,manufacturing,1,24,100,2400,126,1
+Celtcorp,Adaptive Frame,Common,manufacturing,1,24,100,2400,126,1
+Argos Extractors,Indicite Wafer,Unique,mining,1,243,10,2430,420,1
+Lunar Robotics,Indicite Wafer,Unique,tech,1,243,10,2430,420,1
+Son,Indicite Wafer,Unique,tech,1,243,10,2430,420,1
+Ryujin,Amino Acids,Rare,medical,2,10,250,2500,210,1
+Axion Energy,Argon,Common,manufacturing,2,5,500,2500,126,1
+Six Sisters,Isotopic Coolant,Common,mining,1,25,100,2500,126,1
+Centauri Mills,Nutrient,Common,food,2,5,500,2500,126,1
+Allied Armaments,Polymer,Exotic,small arms,2,20,125,2500,294,1
+Axion Energy,Polymer,Exotic,manufacturing,2,20,125,2500,294,1
+Combatech,Polymer,Exotic,small arms,2,20,125,2500,294,1
+Armco,Reactive Gauge,Common,manufacturing,1,25,100,2500,126,1
+Ryujin,Stimulant,Exotic,medical,2,20,125,2500,294,1
+Celtcorp,Substrate Molecule Sieve,Unique,tech,1,274,10,2740,420,1
+Lunar Robotics,Substrate Molecule Sieve,Unique,tech,1,274,10,2740,420,1
+Infinity Ltd,Ionic Liquids,Exotic,tech,2,23,125,2875,294,1
+Ryujin,Ionic Liquids,Exotic,medical,2,23,125,2875,294,1
+Ryujin,Immunostimulant,Unique,medical,2,58,50,2900,420,1
+Ryujin,Luxury Textile,Unique,apparel,2,58,50,2900,420,1
+Axion Energy,Adhesive,Rare,manufacturing,2,12,250,3000,210,1
+Celtcorp,Adhesive,Rare,manufacturing,2,12,250,3000,210,1
+Ryujin,Analgesic,Rare,medical,2,12,250,3000,210,1
+Infinity Ltd,Chlorine,Common,tech,2,6,500,3000,126,1
+Ryujin,Chlorine,Common,tech,2,6,500,3000,126,1
+Enhance,Cosmetic,Uncommon,cosmetic,2,8,375,3000,168,1
+Ryujin,Cosmetic,Uncommon,apparel,2,8,375,3000,168,1
+Arc Might,Sealant,Common,manufacturing,2,6,500,3000,126,1
+Ryujin,Sealant,Common,manufacturing,2,6,500,3000,126,1
+Eit Clothiers,High-Tensile Spidroin,Unique,apparel,2,62,50,3100,420,2
+Consolidated Mining,Caesium,Exotic,mining,2,25,125,3125,294,2
+Vanguard,Caesium,Exotic,lasers,2,25,125,3125,294,2
+Celtcorp,Memory Substrate,Unique,tech,2,65,50,3250,420,2
+Reliant Medical,Memory Substrate,Unique,medical,2,65,50,3250,420,2
+Allied Armaments,Titanium,Rare,small arms,2,12,275,3300,210,2
+Axion Energy,Titanium,Rare,manufacturing,2,12,275,3300,210,2
+Consolidated Mining,Titanium,Rare,mining,2,12,275,3300,210,2
+Filburn Agriculture,Membrane,Uncommon,food,2,9,375,3375,168,2
+Ryujin,Membrane,Uncommon,medical,2,9,375,3375,168,2
+Axion Energy,Xenon,Exotic,manufacturing,2,27,125,3375,294,2
+Allied Armaments,Aluminum,Common,small arms,2,7,500,3500,126,2
+Armco,Aluminum,Common,manufacturing,2,7,500,3500,126,2
+Axion Energy,Aluminum,Common,manufacturing,2,7,500,3500,126,2
+Combatech,Aluminum,Common,small arms,2,7,500,3500,126,2
+Kore Kinetics,Aluminum,Common,small arms-ballistic,2,7,500,3500,126,2
+Ryujin,Aluminum,Common,manufacturing,2,7,500,3500,126,2
+Ryujin,Hallucinogen,Rare,medical,2,14,250,3500,210,2
+Axion Energy,Lithium,Rare,manufacturing,2,14,250,3500,210,2
+Nova Galactic,Lithium,Rare,ships,2,14,250,3500,210,2
+Armco,Structural Material,Common,manufacturing,2,7,500,3500,126,2
+Argos Extractors,Titanium,Rare,mining,2,12,300,3600,210,2
+Allied Armaments,Isocentered Magnet,Common,small arms,1,36,100,3600,126,2
+Infinity Ltd,Antimicrobial,Uncommon,tech,2,10,375,3750,168,2
+Son,Antimicrobial,Uncommon,tech,2,10,375,3750,168,2
+Protectorate Systems,Antimony,Exotic,shields,2,30,125,3750,294,2
+Dogstar,Helium-3,Uncommon,fuel,3,5,750,3750,201.6,2
+Enhance,Pigment,Uncommon,cosmetic,2,10,375,3750,168,2
+Muybridge Pharmaceuticals,Biosuppressant,Exotic,medical,3,16,250,4000,352.8,2
+Ryujin,Fiber,Common,apparel,3,4,1000,4000,151.2,2
+Celtcorp,Iron,Common,manufacturing,2,8,500,4000,126,2
+Aboron,Neon,Exotic,small arms-energy,3,16,250,4000,352.8,2
+Reliant Medical,Toxin,Common,medical,2,8,500,4000,126,2
+Advanced Nutrition,Water,Common,food,3,4,1000,4000,151.2,2
+Chandra Vineyards,Water,Common,food,3,4,1000,4000,151.2,2
+Xenofresh Fisheries,Water,Common,food,3,4,1000,4000,151.2,2
+Filburn Agriculture,Spice,Uncommon,food,2,11,375,4125,168,2
+Six Sisters,Aldumite Drilling Rig,Unique,mining,1,421,10,4210,420,2
+Infinity Ltd,Beryllium,Uncommon,tech,2,12,375,4500,168,2
+Arc Might,Control Rod,Exotic,manufacturing,1,180,25,4500,294,2
+Arc Might,Fluorine,Uncommon,manufacturing,2,12,375,4500,168,2
+Ryujin,Fluorine,Uncommon,manufacturing,2,12,375,4500,168,2
+Muybridge Pharmaceuticals,Hypercatalyst,Exotic,medical,3,18,250,4500,352.8,2
+Axion Energy,Lubricant,Exotic,manufacturing,3,18,250,4500,352.8,2
+Ryujin,Metabolic Agent,Common,medical,2,9,500,4500,126,2
+Ryujin,Tetrafluorides,Rare,medical,2,18,250,4500,210,2
+Arc Might,Molecular Sieve,Rare,manufacturing,1,91,50,4550,210,2
+Celtcorp,Molecular Sieve,Rare,tech,1,91,50,4550,210,2
+Axion Energy,Solvent,Exotic,manufacturing,3,19,250,4750,352.8,2
+Nova Galactic,Ytterbium,Exotic,ships,2,38,125,4750,294,2
+Advanced Nutrition,Alkanes,Uncommon,food,2,13,375,4875,168,2
+Xenofresh Fisheries,Alkanes,Uncommon,food,2,13,375,4875,168,2
+Reliant Medical,Amino Acids,Rare,medical,3,10,500,5000,252,2
+Ryujin,Argon,Common,manufacturing,3,5,1000,5000,151.2,2
+Allied Armaments,Copper,Common,small arms,2,10,500,5000,126,2
+Axion Energy,Copper,Common,manufacturing,2,10,500,5000,126,2
+Combatech,Copper,Common,small arms,2,10,500,5000,126,2
+Kore Kinetics,Copper,Common,small arms-ballistic,2,10,500,5000,126,2
+Ryujin,Copper,Common,manufacturing,2,10,500,5000,126,2
+Nova Galactic,Europium,Exotic,grav,2,40,125,5000,294,2
+Reladyne,Europium,Exotic,grav,2,40,125,5000,294,2
+Vanguard,Europium,Exotic,grav,2,40,125,5000,294,2
+Allied Armaments,Lead,Common,small arms,2,10,500,5000,126,2
+Combatech,Lead,Common,small arms,2,10,500,5000,126,2
+Axion Energy,Neodymium,Rare,manufacturing,2,20,250,5000,210,2
+Ryujin,Neodymium,Rare,manufacturing,2,20,250,5000,210,2
+Combatech,Nickel,Common,small arms,2,10,500,5000,126,2
+Advanced Nutrition,Nutrient,Common,food,3,5,1000,5000,151.2,2
+Arc Might,Polymer,Exotic,manufacturing,3,20,250,5000,352.8,2
+Advanced Nutrition,Stimulant,Exotic,food,3,20,250,5000,352.8,2
+Reliant Medical,Stimulant,Exotic,medical,3,20,250,5000,352.8,2
+Celtcorp,Zero Wire,Common,manufacturing,1,52,100,5200,126,2
+Combatech,Zero Wire,Common,small arms,1,52,100,5200,126,2
+Ryujin,Zero Wire,Common,manufacturing,1,52,100,5200,126,2
+Celtcorp,Chlorosilanes,Uncommon,tech,2,14,375,5250,168,2
+Son,Chlorosilanes,Uncommon,tech,2,14,375,5250,168,2
+Ballistics Solutions,Iridium,Uncommon,em,2,14,375,5250,168,2
+Allied Armaments,Microsecond Regulator,Exotic,small arms,1,212,25,5300,294,2
+Combatech,Microsecond Regulator,Exotic,small arms,1,212,25,5300,294,2
+Enhance,Aromatic,Rare,cosmetic,3,11,500,5500,252,2
+Reliant Medical,Mercury,Rare,medical,2,22,250,5500,210,2
+Vanguard,Monopropellant,Uncommon,missiles,1,76,75,5700,168,2
+Panoptes,Ionic Liquids,Exotic,engines,3,23,250,5750,352.8,2
+Argos Extractors,Tantalum,Rare,mining,2,23,250,5750,210,2
+Muybridge Pharmaceuticals,Immunostimulant,Unique,medical,3,58,100,5800,504,2
+Eit Clothiers,Luxury Textile,Unique,apparel,3,58,100,5800,504,2
+Generdyne Industries,Vytinium,Unique,energy,2,116,50,5800,420,2
+Six Sisters,Austenitic Manifold,Uncommon,mining,1,79,75,5925,168,2
+Ryujin,Adhesive,Rare,manufacturing,3,12,500,6000,252,2
+Enhance,Analgesic,Rare,cosmetic,3,12,500,6000,252,2
+Muybridge Pharmaceuticals,Carboxylic Acids,Rare,medical,3,12,500,6000,252,2
+Muybridge Pharmaceuticals,Chlorine,Common,medical,3,6,1000,6000,151.2,2
+Axion Energy,Gold,Rare,manufacturing,2,24,250,6000,210,2
+Ryujin,Platinum,Rare,tech,2,24,250,6000,210,2
+Nova Galactic,Sealant,Common,ships,3,6,1000,6000,151.2,2
+Advanced Nutrition,Sedative,Rare,food,3,12,500,6000,252,2
+Hopetech,Titanium,Rare,ships,3,12,500,6000,252,2
+Nova Galactic,Titanium,Rare,ships,3,12,500,6000,252,2
+Trident Luxury Lines,Titanium,Rare,ships,3,12,500,6000,252,2
+Arc Might,Tungsten,Uncommon,manufacturing,2,16,375,6000,168,2
+Argos Extractors,Tungsten,Uncommon,mining,2,16,375,6000,168,2
+Axion Energy,Tungsten,Uncommon,manufacturing,2,16,375,6000,168,2
+Consolidated Mining,Tungsten,Uncommon,mining,2,16,375,6000,168,2
+Nova Galactic,Tungsten,Uncommon,ships,2,16,375,6000,168,2
+Shinigami,Tungsten,Uncommon,ballistics,2,16,375,6000,168,2
+Consolidated Mining,Vanadium,Rare,mining,2,24,250,6000,210,2
+Xiang,Tau Grade Rheostat,Uncommon,reactors,1,82,75,6150,168,2
+Ballistics Solutions,Caesium,Exotic,em,3,25,250,6250,352.8,2
+Shinigami,Caesium,Exotic,lasers,3,25,250,6250,352.8,2
+Vanguard,Palladium,Exotic,lasers,3,25,250,6250,352.8,2
+Muybridge Pharmaceuticals,Memory Substrate,Unique,medical,3,65,100,6500,504,2
+Advanced Nutrition,Membrane,Uncommon,food,3,9,750,6750,201.6,2
+Muybridge Pharmaceuticals,Membrane,Uncommon,medical,3,9,750,6750,201.6,2
+Ryujin,Xenon,Exotic,manufacturing,3,27,250,6750,352.8,2
+Dogstar,Aluminum,Common,cargo,3,7,1000,7000,151.2,2
+Nova Galactic,Aluminum,Common,ships,3,7,1000,7000,151.2,2
+Panoptes,Aluminum,Common,cargo,3,7,1000,7000,151.2,2
+Protectorate Systems,Aluminum,Common,cargo,3,7,1000,7000,151.2,2
+Sextant Shield Systems,Aluminum,Common,cargo,3,7,1000,7000,151.2,2
+Arc Might,Dysprosium,Exotic,manufacturing,2,56,125,7000,294,2
+Axion Energy,Dysprosium,Exotic,manufacturing,2,56,125,7000,294,2
+Reliant Medical,Hallucinogen,Rare,medical,3,14,500,7000,252,2
+Celtcorp,Lithium,Rare,manufacturing,3,14,500,7000,252,2
+Stroud Eklund,Lithium,Rare,ships,3,14,500,7000,252,2
+Taiyo Astroneering,Lithium,Rare,ships,3,14,500,7000,252,2
+Trident Luxury Lines,Lithium,Rare,ships,3,14,500,7000,252,2
+Hopetech,Uranium,Common,ships,2,14,500,7000,126,2
+Nova Galactic,Uranium,Common,ships,2,14,500,7000,126,2
+Axion Energy,Semimetal Wafer,Rare,manufacturing,1,149,50,7450,210,3
+Celtcorp,Semimetal Wafer,Rare,manufacturing,1,149,50,7450,210,3
+Ryujin,Antimicrobial,Uncommon,medical,3,10,750,7500,201.6,3
+Nautilus,Antimony,Exotic,shields,3,30,250,7500,352.8,3
+Vanguard,Antimony,Exotic,shields,3,30,250,7500,352.8,3
+Celtcorp,Silver,Uncommon,manufacturing,2,20,375,7500,168,3
+Deimos Staryards,Iron,Common,ships,3,8,1000,8000,151.2,3
+Generdyne Industries,Plutonium,Exotic,energy,2,64,125,8000,294,3
+Chunks,Toxin,Common,food,3,8,1000,8000,151.2,3
+Ryujin,Toxin,Common,medical,3,8,1000,8000,151.2,3
+Eit Clothiers,Ornamental Material,Uncommon,apparel,3,11,750,8250,201.6,3
+Advanced Nutrition,Spice,Uncommon,food,3,11,750,8250,201.6,3
+Generdyne Industries,Vytinium Fuel Rod,Unique,energy,1,836,10,8360,420,3
+Shinigami,Uranium,Common,ballistics,2,14,600,8400,126,3
+Argos Extractors,Aldumite,Unique,mining,3,84,100,8400,504,3
+Ryujin,Beryllium,Uncommon,tech,3,12,750,9000,201.6,3
+Celtcorp,Fluorine,Uncommon,manufacturing,3,12,750,9000,201.6,3
+Muybridge Pharmaceuticals,Metabolic Agent,Common,medical,3,9,1000,9000,151.2,3
+Muybridge Pharmaceuticals,Tetrafluorides,Rare,medical,3,18,500,9000,252,3
+Ryujin,Mag Pressure Tank,Uncommon,tech,2,25,375,9375,168,3
+Arc Might,Polytextile,Uncommon,manufacturing,2,25,375,9375,168,3
+Deimos Staryards,Ytterbium,Exotic,ships,3,38,250,9500,352.8,3
+Hopetech,Ytterbium,Exotic,ships,3,38,250,9500,352.8,3
+Taiyo Astroneering,Ytterbium,Exotic,ships,3,38,250,9500,352.8,3
+Chunks,Alkanes,Uncommon,food,3,13,750,9750,201.6,3
+Reliant Medical,Biosuppressant,Exotic,medical,4,16,625,10000,441,3
+Celtcorp,Copper,Common,manufacturing,3,10,1000,10000,151.2,3
+Deep Core,Europium,Exotic,grav,3,40,250,10000,352.8,3
+Kore Kinetics,Lead,Common,small arms-ballistic,3,10,1000,10000,151.2,3
+Ballistics Solutions,Neodymium,Rare,particle,3,20,500,10000,252,3
+Horizon Defence,Neodymium,Rare,particle,3,20,500,10000,252,3
+Consolidated Mining,Nickel,Common,mining,3,10,1000,10000,151.2,3
+Chunks,Water,Common,food,4,4,2500,10000,189,3
+Infinity Ltd,Chlorosilanes,Uncommon,tech,3,14,750,10500,201.6,3
+Shinigami,Iridium,Uncommon,lasers,3,14,750,10500,201.6,3
+Vanguard,Iridium,Uncommon,lasers,3,14,750,10500,201.6,3
+Ryujin,Mercury,Rare,medical,3,22,500,11000,252,3
+Reliant Medical,Hypercatalyst,Exotic,medical,4,18,625,11250,441,3
+Ballistics Solutions,Tantalum,Rare,particle,3,23,500,11500,252,3
+Vanguard,Tantalum,Rare,particle,3,23,500,11500,252,3
+Axion Energy,Adaptive Frame,Common,manufacturing,2,24,500,12000,126,3
+Ryujin,Adaptive Frame,Common,manufacturing,2,24,500,12000,126,3
+Ryujin,Gold,Rare,manufacturing,3,24,500,12000,252,3
+Infinity Ltd,Platinum,Rare,tech,3,24,500,12000,252,3
+Deimos Staryards,Tungsten,Uncommon,ships,3,16,750,12000,201.6,3
+Hopetech,Tungsten,Uncommon,ships,3,16,750,12000,201.6,3
+Stroud Eklund,Tungsten,Uncommon,ships,3,16,750,12000,201.6,3
+Taiyo Astroneering,Tungsten,Uncommon,ships,3,16,750,12000,201.6,3
+Trident Luxury Lines,Tungsten,Uncommon,ships,3,16,750,12000,201.6,3
+Argos Extractors,Vanadium,Rare,mining,3,24,500,12000,252,3
+Celtcorp,Indicite Wafer,Unique,tech,2,243,50,12150,420,3
+Muybridge Pharmaceuticals,Amino Acids,Rare,medical,4,10,1250,12500,315,3
+Arc Might,Argon,Common,manufacturing,4,5,2500,12500,189,3
+Consolidated Mining,Isotopic Coolant,Common,mining,2,25,500,12500,126,3
+Xenofresh Fisheries,Nutrient,Common,food,4,5,2500,12500,189,3
+Ryujin,Polymer,Exotic,manufacturing,4,20,625,12500,441,3
+Axion Energy,Reactive Gauge,Common,manufacturing,2,25,500,12500,126,3
+Celtcorp,Reactive Gauge,Common,manufacturing,2,25,500,12500,126,3
+Chunks,Stimulant,Exotic,food,4,20,625,12500,441,3
+Reliant Medical,Substrate Molecule Sieve,Unique,medical,2,274,50,13700,420,3
+Generdyne Industries,Dysprosium,Exotic,energy,3,56,250,14000,352.8,3
+Deimos Staryards,Uranium,Common,ships,3,14,1000,14000,151.2,3
+Generdyne Industries,Uranium,Common,energy,3,14,1000,14000,151.2,3
+Stroud Eklund,Uranium,Common,ships,3,14,1000,14000,151.2,3
+Taiyo Astroneering,Uranium,Common,ships,3,14,1000,14000,151.2,3
+Muybridge Pharmaceuticals,Benzene,Uncommon,medical,3,19,750,14250,201.6,3
+Reladyne,Ionic Liquids,Exotic,engines,4,23,625,14375,441,3
+Slayton Aerospace,Ionic Liquids,Exotic,engines,4,23,625,14375,441,3
+Axion Energy,Rothicite Magnet,Unique,energy,2,295,50,14750,420,3
+Consolidated Mining,Veryl-Treated Manifold,Unique,mining,2,295,50,14750,420,3
+Axion Energy,Tasine Superconductor,Unique,energy,2,299,50,14950,420,3
+Arc Might,Adhesive,Rare,manufacturing,4,12,1250,15000,315,3
+Reliant Medical,Analgesic,Rare,medical,4,12,1250,15000,315,3
+Reliant Medical,Carboxylic Acids,Rare,medical,4,12,1250,15000,315,3
+Reliant Medical,Chlorine,Common,medical,4,6,2500,15000,189,3
+Deimos Staryards,Sealant,Common,ships,4,6,2500,15000,189,3
+Stroud Eklund,Sealant,Common,ships,4,6,2500,15000,189,3
+Taiyo Astroneering,Sealant,Common,ships,4,6,2500,15000,189,3
+Trident Luxury Lines,Sealant,Common,ships,4,6,2500,15000,189,3
+Chunks,Sedative,Rare,food,4,12,1250,15000,315,3
+Reliant Medical,Sedative,Rare,medical,4,12,1250,15000,315,3
+Axion Energy,Silver,Uncommon,manufacturing,3,20,750,15000,201.6,3
+Ryujin,Silver,Uncommon,manufacturing,3,20,750,15000,201.6,3
+Stroud Eklund,Titanium,Rare,ships,4,12,1250,15000,315,3
+Taiyo Astroneering,Titanium,Rare,ships,4,12,1250,15000,315,3
+Axion Energy,Caesium,Exotic,energy,4,25,625,15625,441,3
+Generdyne Industries,Caesium,Exotic,energy,4,25,625,15625,441,3
+Horizon Defence,Caesium,Exotic,lasers,4,25,625,15625,441,3
+Horizon Defence,Palladium,Exotic,lasers,4,25,625,15625,441,3
+Shinigami,Palladium,Exotic,lasers,4,25,625,15625,441,3
+Infinity Ltd,Memory Substrate,Unique,tech,4,65,250,16250,630,3
+Vanguard,Sterile Nanotubes,Exotic,shields,2,130,125,16250,294,3
+Chunks,Gastronomic Delight,Unique,food,4,66,250,16500,630,3
+Chunks,Membrane,Uncommon,food,4,9,1875,16875,252,3
+Reliant Medical,Membrane,Uncommon,medical,4,9,1875,16875,252,3
+Arc Might,Xenon,Exotic,manufacturing,4,27,625,16875,441,3
+Arc Might,Aluminum,Common,manufacturing,4,7,2500,17500,189,3
+Deimos Staryards,Aluminum,Common,ships,4,7,2500,17500,189,3
+Hopetech,Aluminum,Common,ships,4,7,2500,17500,189,3
+Stroud Eklund,Aluminum,Common,ships,4,7,2500,17500,189,3
+Taiyo Astroneering,Aluminum,Common,ships,4,7,2500,17500,189,3
+Arc Might,Lithium,Rare,manufacturing,4,14,1250,17500,315,3
+Deimos Staryards,Lithium,Rare,ships,4,14,1250,17500,315,3
+Arc Might,Structural Material,Common,manufacturing,4,7,2500,17500,189,3
+Combatech,Isocentered Magnet,Common,small arms,2,36,500,18000,126,3
+Muybridge Pharmaceuticals,Antimicrobial,Uncommon,medical,4,10,1875,18750,252,3
+Dogstar,Antimony,Exotic,shields,4,30,625,18750,441,3
+Celtcorp,Mag Pressure Tank,Uncommon,tech,3,25,750,18750,201.6,3
+Eit Clothiers,Pigment,Uncommon,apparel,4,10,1875,18750,252,3
+Armco,Iron,Common,manufacturing,4,8,2500,20000,189,3
+Nova Galactic,Iron,Common,ships,4,8,2500,20000,189,3
+Stroud Eklund,Iron,Common,ships,4,8,2500,20000,189,3
+Taiyo Astroneering,Iron,Common,ships,4,8,2500,20000,189,3
+Trident Luxury Lines,Iron,Common,ships,4,8,2500,20000,189,3
+Arc Might,Water,Common,manufacturing,5,4,5000,20000,252,3
+Chunks,Spice,Uncommon,food,4,11,1875,20625,252,3
+Generdyne Industries,Control Rod,Exotic,energy,2,180,125,22500,294,3
+Arc Might,Lubricant,Exotic,manufacturing,5,18,1250,22500,588,3
+Reliant Medical,Metabolic Agent,Common,medical,4,9,2500,22500,189,3
+Reliant Medical,Tetrafluorides,Rare,medical,4,18,1250,22500,315,3
+Axion Energy,Molecular Sieve,Rare,manufacturing,2,91,250,22750,210,3
+Lunar Robotics,Molecular Sieve,Rare,tech,2,91,250,22750,210,3
+Light Scythe,Zero-G Gimbal,Rare,missiles,2,93,250,23250,210,3
+Shinigami,Zero-G Gimbal,Rare,missiles,2,93,250,23250,210,3
+Vanguard,Zero-G Gimbal,Rare,missiles,2,93,250,23250,210,3
+Stroud Eklund,Ytterbium,Exotic,ships,4,38,625,23750,441,3
+Trident Luxury Lines,Adaptive Frame,Common,ships,3,24,1000,24000,151.2,3
+Infinity Ltd,Indicite Wafer,Unique,tech,3,243,100,24300,504,3
+Arc Might,Copper,Common,manufacturing,4,10,2500,25000,189,4
+Slayton Aerospace,Europium,Exotic,grav,4,40,625,25000,441,4
+Axion Energy,Isotopic Coolant,Common,energy,3,25,1000,25000,151.2,4
+Panoptes,Isotopic Coolant,Common,engines,3,25,1000,25000,151.2,4
+Reladyne,Isotopic Coolant,Common,engines,3,25,1000,25000,151.2,4
+Arc Might,Neodymium,Rare,manufacturing,4,20,1250,25000,315,4
+Light Scythe,Neodymium,Rare,particle,4,20,1250,25000,315,4
+Argos Extractors,Nickel,Common,mining,4,10,2500,25000,189,4
+Chunks,Nutrient,Common,food,5,5,5000,25000,252,4
+Ryujin,Reactive Gauge,Common,manufacturing,3,25,1000,25000,151.2,4
+Muybridge Pharmaceuticals,Stimulant,Exotic,medical,5,20,1250,25000,588,4
+Allied Armaments,Zero Wire,Common,small arms,2,52,500,26000,126,4
+Nova Galactic,Zero Wire,Common,ships,2,52,500,26000,126,4
+Ryujin,Chlorosilanes,Uncommon,tech,4,14,1875,26250,252,4
+Horizon Defence,Iridium,Uncommon,lasers,4,14,1875,26250,252,4
+Celtcorp,Microsecond Regulator,Exotic,tech,2,212,125,26500,294,4
+Lunar Robotics,Microsecond Regulator,Exotic,tech,2,212,125,26500,294,4
+Ryujin,Substrate Molecule Sieve,Unique,tech,3,274,100,27400,504,4
+Deimos Staryards,Supercooled Magnet,Rare,ships,2,111,250,27750,210,4
+Hopetech,Supercooled Magnet,Rare,ships,2,111,250,27750,210,4
+Nova Galactic,Supercooled Magnet,Rare,ships,2,111,250,27750,210,4
+Trident Luxury Lines,Supercooled Magnet,Rare,ships,2,111,250,27750,210,4
+Shinigami,Monopropellant,Uncommon,missiles,2,76,375,28500,168,4
+Amun Dunn,Ionic Liquids,Exotic,engines,5,23,1250,28750,588,4
+Horizon Defence,Tantalum,Rare,particle,4,23,1250,28750,315,4
+Shinigami,Tantalum,Rare,em,4,23,1250,28750,315,4
+Reliant Medical,Immunostimulant,Unique,medical,5,58,500,29000,840,4
+Axion Energy,Vytinium,Unique,energy,4,116,250,29000,630,4
+Argos Extractors,Veryl-Treated Manifold,Unique,mining,3,295,100,29500,504,4
+Vanguard,Veryl-Treated Manifold,Unique,particle,3,295,100,29500,504,4
+Argos Extractors,Austenitic Manifold,Uncommon,mining,2,79,375,29625,168,4
+Consolidated Mining,Austenitic Manifold,Uncommon,mining,2,79,375,29625,168,4
+Galbank,Gold,Rare,finance,4,24,1250,30000,315,4
+Galbank,Platinum,Rare,finance,4,24,1250,30000,315,4
+Hopetech,Sealant,Common,ships,5,6,5000,30000,252,4
+Muybridge Pharmaceuticals,Sedative,Rare,medical,5,12,2500,30000,420,4
+Arc Might,Titanium,Rare,manufacturing,5,12,2500,30000,420,4
+Deimos Staryards,Titanium,Rare,ships,5,12,2500,30000,420,4
+Horizon Defence,Tungsten,Uncommon,ballistics,4,16,1875,30000,252,4
+Generdyne Industries,Tau Grade Rheostat,Uncommon,energy,2,82,375,30750,168,4
+Ryujin,High-Tensile Spidroin,Unique,apparel,5,62,500,31000,840,4
+Light Scythe,Caesium,Exotic,lasers,5,25,1250,31250,588,4
+Light Scythe,Palladium,Exotic,lasers,5,25,1250,31250,588,4
+Ryujin,Memory Substrate,Unique,tech,5,65,500,32500,840,4
+Nautilus,Sterile Nanotubes,Exotic,shields,3,130,250,32500,352.8,4
+Protectorate Systems,Sterile Nanotubes,Exotic,shields,3,130,250,32500,352.8,4
+Ballistics Solutions,Positron Battery,Rare,em,2,133,250,33250,210,4
+Trident Luxury Lines,Aluminum,Common,ships,5,7,5000,35000,252,4
+Muybridge Pharmaceuticals,Hallucinogen,Rare,medical,5,14,2500,35000,420,4
+Hopetech,Lithium,Rare,ships,5,14,2500,35000,420,4
+Ballistics Solutions,Uranium,Common,ballistics,4,14,2500,35000,189,4
+Horizon Defence,Uranium,Common,ballistics,4,14,2500,35000,189,4
+Reliant Medical,Benzene,Uncommon,medical,4,19,1875,35625,252,4
+Ballistics Solutions,Isocentered Magnet,Common,particle,3,36,1000,36000,151.2,4
+Horizon Defence,Isocentered Magnet,Common,particle,3,36,1000,36000,151.2,4
+Arc Might,Semimetal Wafer,Rare,manufacturing,2,149,250,37250,210,4
+Consolidated Mining,Semimetal Wafer,Rare,mining,2,149,250,37250,210,4
+Reliant Medical,Antimicrobial,Uncommon,medical,5,10,3750,37500,336,4
+Sextant Shield Systems,Antimony,Exotic,shields,5,30,1250,37500,588,4
+Arc Might,Silver,Uncommon,manufacturing,4,20,1875,37500,252,4
+Xiang,Paramagnon Conductor,Rare,reactors,2,153,250,38250,210,4
+Arc Might,Iron,Common,manufacturing,5,8,5000,40000,252,4
+Hopetech,Iron,Common,ships,5,8,5000,40000,252,4
+Muybridge Pharmaceuticals,Toxin,Common,medical,5,8,5000,40000,252,4
+Deep Core,Vytinium Fuel Rod,Unique,grav,2,836,50,41800,420,4
+Xiang,Vytinium Fuel Rod,Unique,reactors,2,836,50,41800,420,4
+Consolidated Mining,Aldumite Drilling Rig,Unique,mining,3,421,100,42100,504,4
+Infinity Ltd,Control Rod,Exotic,tech,3,180,250,45000,352.8,4
+Advanced Nutrition,Molecular Sieve,Rare,food,3,91,500,45500,252,4
+Chunks,Molecular Sieve,Rare,food,3,91,500,45500,252,4
+Ryujin,Molecular Sieve,Rare,tech,3,91,500,45500,252,4
+Horizon Defence,Zero-G Gimbal,Rare,missiles,3,93,500,46500,252,4
+Nova Galactic,Zero-G Gimbal,Rare,ships,3,93,500,46500,252,4
+Stroud Eklund,Zero-G Gimbal,Rare,ships,3,93,500,46500,252,4
+Taiyo Astroneering,Zero-G Gimbal,Rare,ships,3,93,500,46500,252,4
+Infinity Ltd,Mag Pressure Tank,Uncommon,tech,4,25,1875,46875,252,4
+Ryujin,Polytextile,Uncommon,manufacturing,4,25,1875,46875,252,4
+Trident Luxury Lines,Ytterbium,Exotic,ships,5,38,1250,47500,588,4
+Vanguard,Neodymium,Rare,particle,5,20,2500,50000,420,4
+Armco,Zero Wire,Common,manufacturing,3,52,1000,52000,151.2,4
+Deimos Staryards,Zero Wire,Common,ships,3,52,1000,52000,151.2,4
+Hopetech,Zero Wire,Common,ships,3,52,1000,52000,151.2,4
+Stroud Eklund,Zero Wire,Common,ships,3,52,1000,52000,151.2,4
+Taiyo Astroneering,Zero Wire,Common,ships,3,52,1000,52000,151.2,4
+Light Scythe,Iridium,Uncommon,lasers,5,14,3750,52500,336,4
+Ryujin,Microsecond Regulator,Exotic,tech,3,212,250,53000,352.8,4
+Generdyne Industries,Supercooled Magnet,Rare,energy,3,111,500,55500,252,4
+Stroud Eklund,Supercooled Magnet,Rare,ships,3,111,500,55500,252,4
+Taiyo Astroneering,Supercooled Magnet,Rare,ships,3,111,500,55500,252,4
+Generdyne Industries,Nuclear Fuel Rod,Exotic,energy,3,225,250,56250,352.8,4
+Light Scythe,Monopropellant,Uncommon,missiles,3,76,750,57000,201.6,4
+Light Scythe,Tantalum,Rare,particle,5,23,2500,57500,420,4
+Nova Galactic,Austenitic Manifold,Uncommon,ships,3,79,750,59250,201.6,4
+Taiyo Astroneering,Austenitic Manifold,Uncommon,ships,3,79,750,59250,201.6,4
+Trident Luxury Lines,Austenitic Manifold,Uncommon,ships,3,79,750,59250,201.6,4
+Arc Might,Adaptive Frame,Common,manufacturing,4,24,2500,60000,189,4
+Nova Galactic,Adaptive Frame,Common,ships,4,24,2500,60000,189,4
+Stroud Eklund,Adaptive Frame,Common,ships,4,24,2500,60000,189,4
+Taiyo Astroneering,Adaptive Frame,Common,ships,4,24,2500,60000,189,4
+Ballistics Solutions,Tungsten,Uncommon,ballistics,5,16,3750,60000,336,4
+Ryujin,Indicite Wafer,Unique,tech,4,243,250,60750,630,4
+Dogstar,Tau Grade Rheostat,Uncommon,reactors,3,82,750,61500,202,4
+Argos Extractors,Isotopic Coolant,Common,mining,4,25,2500,62500,189,4
+Generdyne Industries,Isotopic Coolant,Common,energy,4,25,2500,62500,189,4
+Slayton Aerospace,Isotopic Coolant,Common,engines,4,25,2500,62500,189,4
+Arc Might,Reactive Gauge,Common,manufacturing,4,25,2500,62500,189,4
+Horizon Defence,Positron Battery,Rare,lasers,3,133,500,66500,252,4
+Vanguard,Positron Battery,Rare,lasers,3,133,500,66500,252,4
+Muybridge Pharmaceuticals,Substrate Molecule Sieve,Unique,medical,4,274,250,68500,630,4
+Axion Energy,Uranium,Common,energy,5,14,5000,70000,252,4
+Six Sisters,Drilling Rig,Rare,mining,3,143,500,71500,252,4
+Generdyne Industries,Rothicite Magnet,Unique,energy,4,295,250,73750,630,4
+Ballistics Solutions,Veryl-Treated Manifold,Unique,particle,4,295,250,73750,630,4
+Light Scythe,Veryl-Treated Manifold,Unique,particle,4,295,250,73750,630,4
+Argos Extractors,Semimetal Wafer,Rare,mining,3,149,500,74500,252,4
+Galbank,Silver,Uncommon,finance,5,20,3750,75000,336,4
+Amun Dunn,Paramagnon Conductor,Rare,reactors,3,153,500,76500,252,4
+Deep Core,Paramagnon Conductor,Rare,reactors,3,153,500,76500,252,4
+Shinigami,Paramagnon Conductor,Rare,lasers,3,153,500,76500,252,4
+Vanguard,Paramagnon Conductor,Rare,lasers,3,153,500,76500,252,4
+Axion Energy,Plutonium,Exotic,energy,5,64,1250,80000,588,4
+Dogstar,Sterile Nanotubes,Exotic,shields,4,130,625,81250,441,4
+Nova Galactic,Vytinium Fuel Rod,Unique,grav,3,836,100,83600,504,4
+Vanguard,Vytinium Fuel Rod,Unique,grav,3,836,100,83600,504,4
+Nova Galactic,Comm Relay,Uncommon,ships,3,117,750,87750,202,4
+Trident Luxury Lines,Comm Relay,Uncommon,ships,3,117,750,87750,202,4
+Vanguard,Isocentered Magnet,Common,particle,4,36,2500,90000,189,4
+Eit Clothiers,Polytextile,Uncommon,apparel,5,25,3750,93750,336,4
+Axion Energy,Control Rod,Exotic,manufacturing,4,180,625,112500,441,5
+Infinity Ltd,Molecular Sieve,Rare,tech,4,91,1250,113750,315,5
+Reliant Medical,Molecular Sieve,Rare,medical,4,91,1250,113750,315,5
+Deimos Staryards,Zero-G Gimbal,Rare,ships,4,93,1250,116250,315,5
+Hopetech,Zero-G Gimbal,Rare,ships,4,93,1250,116250,315,5
+Trident Luxury Lines,Zero-G Gimbal,Rare,ships,4,93,1250,116250,315,5
+Deimos Staryards,Adaptive Frame,Common,ships,5,24,5000,120000,252,5
+Hopetech,Adaptive Frame,Common,ships,5,24,5000,120000,252,5
+Axion Energy,Power Circuit,Exotic,energy,4,195,625,121875,441,5
+Amun Dunn,Isotopic Coolant,Common,engines,5,25,5000,125000,252,5
+Arc Might,Zero Wire,Common,manufacturing,4,52,2500,130000,189,5
+Generdyne Industries,Zero Wire,Common,energy,4,52,2500,130000,189,5
+Trident Luxury Lines,Zero Wire,Common,ships,4,52,2500,130000,189,5
+Infinity Ltd,Microsecond Regulator,Exotic,tech,4,212,625,132500,441,5
+Infinity Ltd,Substrate Molecule Sieve,Unique,tech,5,274,500,137000,840,5
+Horizon Defence,Monopropellant,Uncommon,missiles,4,76,1875,142500,252,5
+Horizon Defence,Veryl-Treated Manifold,Unique,particle,5,295,500,147500,840,5
+Deimos Staryards,Austenitic Manifold,Uncommon,ships,4,79,1875,148125,252,5
+Hopetech,Austenitic Manifold,Uncommon,ships,4,79,1875,148125,252,5
+Stroud Eklund,Austenitic Manifold,Uncommon,ships,4,79,1875,148125,252,5
+Generdyne Industries,Tasine Superconductor,Unique,energy,5,299,500,149500,840,5
+Amun Dunn,Tau Grade Rheostat,Uncommon,reactors,4,82,1875,153750,252,5
+Axion Energy,Tau Grade Rheostat,Uncommon,energy,4,82,1875,153750,252,5
+Sextant Shield Systems,Sterile Nanotubes,Exotic,shields,5,130,1250,162500,588,5
+Shinigami,Positron Battery,Rare,lasers,4,133,1250,166250,315,5
+Consolidated Mining,Drilling Rig,Rare,mining,4,143,1250,178750,315,5
+Light Scythe,Isocentered Magnet,Common,particle,5,36,5000,180000,252,5
+Ryujin,Semimetal Wafer,Rare,manufacturing,4,149,1250,186250,315,5
+Axion Energy,Paramagnon Conductor,Rare,energy,4,153,1250,191250,315,5
+Dogstar,Paramagnon Conductor,Rare,reactors,4,153,1250,191250,315,5
+Horizon Defence,Paramagnon Conductor,Rare,lasers,4,153,1250,191250,315,5
+Axion Energy,Vytinium Fuel Rod,Unique,energy,4,836,250,209000,630,5
+Dogstar,Vytinium Fuel Rod,Unique,reactors,4,836,250,209000,630,5
+Reladyne,Vytinium Fuel Rod,Unique,grav,4,836,250,209000,630,5
+Slayton Aerospace,Vytinium Fuel Rod,Unique,grav,4,836,250,209000,630,5
+Argos Extractors,Aldumite Drilling Rig,Unique,mining,5,421,500,210500,840,5
+Hopetech,Comm Relay,Uncommon,ships,4,117,1875,219375,252,5
+Stroud Eklund,Comm Relay,Uncommon,ships,4,117,1875,219375,252,5
+Taiyo Astroneering,Comm Relay,Uncommon,ships,4,117,1875,219375,252,5
+Muybridge Pharmaceuticals,Molecular Sieve,Rare,medical,5,91,2500,227500,420,5
+Ballistics Solutions,Zero-G Gimbal,Rare,missiles,5,93,2500,232500,420,5
+Generdyne Industries,Power Circuit,Exotic,energy,5,195,1250,243750,588,5
+Axion Energy,Zero Wire,Common,manufacturing,5,52,5000,260000,252,5
+Axion Energy,Supercooled Magnet,Rare,energy,5,111,2500,277500,420,5
+Axion Energy,Nuclear Fuel Rod,Exotic,energy,5,225,1250,281250,588,5
+Ballistics Solutions,Monopropellant,Uncommon,missiles,5,76,3750,285000,336,5
+Deep Core,Tau Grade Rheostat,Uncommon,reactors,5,82,3750,307500,336,5
+Light Scythe,Positron Battery,Rare,lasers,5,133,2500,332500,420,5
+Argos Extractors,Drilling Rig,Rare,mining,5,143,2500,357500,420,5
+Generdyne Industries,Paramagnon Conductor,Rare,energy,5,153,2500,382500,420,5
+Light Scythe,Paramagnon Conductor,Rare,lasers,5,153,2500,382500,420,5
+Amun Dunn,Vytinium Fuel Rod,Unique,reactors,5,836,500,418000,840,5
+Deimos Staryards,Comm Relay,Uncommon,ships,5,117,3750,438750,336,5
