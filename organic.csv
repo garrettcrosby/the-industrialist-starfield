@@ -1,0 +1,30 @@
+Resource,Short Name,Rarity,Order Tier,Type,Mass,Value,VTOM,Industries
+Fiber,,Common,1,Organic,1,4,8,apparel
+Metabolic Agent,,Common,1,Organic,1,9,18,medical
+Nutrient,,Common,1,Organic,1,5,10,food
+Sealant,,Common,1,Organic,1,6,12,"ships, small arms, manufacturing"
+Structural Material,,Common,1,Organic,1,7,14,manufacturing
+Toxin,,Common,1,Organic,1,8,16,"medical, food"
+Antimicrobial,,Uncommon,1,Organic,1,10,20,"medical, tech"
+Cosmetic,,Uncommon,1,Organic,1,8,16,"cosmetic, apparel"
+Membrane,,Uncommon,1,Organic,1,9,18,"food, medical"
+Ornamental Material,,Uncommon,1,Organic,1,11,22,apparel
+Pigment,,Uncommon,1,Organic,1,10,20,"apparel, cosmetic"
+Spice,,Uncommon,1,Organic,1,11,22,food
+Adhesive,,Rare,2,Organic,1,12,24,manufacturing
+Amino Acids,,Rare,2,Organic,1,10,20,medical
+Analgesic,,Rare,2,Organic,1,12,24,"medical, cosmetic"
+Aromatic,,Rare,2,Organic,1,11,22,cosmetic
+Hallucinogen,,Rare,2,Organic,1,14,28,medical
+Sedative,,Rare,2,Organic,1,12,24,"medical, food"
+Biosuppressant,,Exotic,3,Organic,1,16,32,medical
+Hypercatalyst,,Exotic,3,Organic,1,18,36,medical
+Lubricant,,Exotic,3,Organic,1,18,36,"manufacturing, small arms-ballistic"
+Polymer,,Exotic,3,Organic,1,20,40,"apparel, manufacturing, small arms, small arms-energy"
+Solvent,,Exotic,3,Organic,1,19,38,"tech, small arms-ballistic, manufacturing"
+Stimulant,,Exotic,3,Organic,1,20,40,"medical, food"
+Gastronomic Delight,,Unique,4,Organic,2,66,44,food
+High-Tensile Spidroin,,Unique,4,Organic,1,62,48,apparel
+Immunostimulant,,Unique,4,Organic,1,58,45,medical
+Luxury Textile,,Unique,4,Organic,2,58,39,apparel
+Memory Substrate,,Unique,4,Organic,1,65,46,"tech, medical"

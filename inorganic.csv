@@ -1,0 +1,42 @@
+Resource,Short Name,Rarity,Order Tier,Type,Mass,Value,VTOM,Industries
+Aluminum,Al,Common,1,Inorganic,1,7,14,"ships, small arms, small arms-ballistic, manufacturing, ships, cargo"
+Argon,Ar,Common,1,Inorganic,1,5,10,manufacturing
+Chlorine,Cl,Common,1,Inorganic,1,6,12,"tech, medical"
+Copper,Cu,Common,1,Inorganic,1,10,17,"small arms, small arms-ballistic, manufacturing"
+Iron,Fe,Common,1,Inorganic,1,8,13,"small arms-ballistic, manufacturing, mining, ships"
+Lead,Pb,Common,1,Inorganic,1,10,14,"small arms, small arms-ballistic"
+Nickel,Ni,Common,1,Inorganic,1,10,17,"small arms, mining"
+Uranium,U,Common,1,Inorganic,1,14,20,"energy, ships, ballistics"
+Water,H₂O,Common,1,Inorganic,1,4,8,"food, manufacturing, tech, ships"
+Alkanes,HnCn,Uncommon,1,Inorganic,1,13,22,food
+Benzene,C₆Hn,Uncommon,1,Inorganic,1,19,32,medical
+Beryllium,Be,Uncommon,1,Inorganic,1,12,24,tech
+Chlorosilanes,SiH₃Cl,Uncommon,1,Inorganic,1,14,23,tech
+Cobalt,Co,Uncommon,1,Inorganic,1,12,20,small arms
+Fluorine,F,Uncommon,1,Inorganic,1,12,24,manufacturing
+Helium-3,He-3,Uncommon,1,Inorganic,0,5,17,fuel
+Iridium,Ir,Uncommon,1,Inorganic,1,14,20,"small arms-energy, small arms, lasers, em"
+Silver,Ag,Uncommon,1,Inorganic,1,20,33,"finance, manufacturing"
+Tungsten,W,Uncommon,1,Inorganic,1,16,23,"ballistics, manufacturing, mining, ships"
+Carboxylic Acids,R-COOH,Rare,2,Inorganic,1,12,15,medical
+Gold,Au,Rare,2,Inorganic,1,24,30,"finance, manufacturing"
+Lithium,Li,Rare,2,Inorganic,1,14,28,"manufacturing, ships, medical"
+Mercury,Hg,Rare,2,Inorganic,1,22,28,medical
+Neodymium,Nd,Rare,2,Inorganic,1,20,25,"manufacturing, particle"
+Platinum,Pt,Rare,2,Inorganic,1,24,30,"finance, tech"
+Tantalum,Ta,Rare,2,Inorganic,1,23,26,"mining, ships, particle, em"
+Tetrafluorides,xF4,Rare,2,Inorganic,1,18,26,medical
+Titanium,Ti,Rare,2,Inorganic,1,12,24,"small arms, manufacturing, mining, ships"
+Vanadium,V,Rare,2,Inorganic,1,24,34,"small arms, mining"
+Antimony,Sb,Exotic,3,Inorganic,1,30,38,shields
+Caesium,Cs,Exotic,3,Inorganic,1,25,31,"energy, mining, lasers, em"
+Dysprosium,Dy,Exotic,3,Inorganic,1,56,40,"energy, manufacturing"
+Europium,Eu,Exotic,3,Inorganic,1,40,40,grav
+Ionic Liquids,IL,Exotic,3,Inorganic,1,23,29,"engines, medical, tech"
+Neon,Ne,Exotic,3,Inorganic,1,16,32,small arms-energy
+Palladium,Pd,Exotic,3,Inorganic,1,25,36,lasers
+Plutonium,Pu,Exotic,3,Inorganic,2,64,40,"energy, tech"
+Xenon,Xe,Exotic,3,Inorganic,1,27,34,manufacturing
+Ytterbium,Yb,Exotic,3,Inorganic,1,38,32,ships
+Aldumite,Ad,Unique,4,Inorganic,2,84,44,mining
+Vytinium,Vy,Unique,4,Inorganic,3,116,46,energy

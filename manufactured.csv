@@ -1,0 +1,31 @@
+Resource,Short Name,Rarity,Order Tier,Type,Mass,Value,VTOM,Industries
+Adaptive Frame,,Common,2,Manufactured,2,24,15,"manufacturing, ships"
+Austenitic Manifold,,Uncommon,2,Manufactured,4,79,18,"mining, ships"
+Comm Relay,,Uncommon,2,Manufactured,4,117,33,ships
+Isocentered Magnet,,Common,2,Manufactured,2,36,20,"particle, small arms"
+Isotopic Coolant,,Common,2,Manufactured,1,25,31,"mining, engines, energy"
+Mag Pressure Tank,,Uncommon,2,Manufactured,2,25,17,"tech, food"
+Monopropellant,,Uncommon,2,Manufactured,4,76,22,missiles
+Polytextile,,Uncommon,2,Manufactured,2,25,13,"apparel, manufacturing"
+Reactive Gauge,,Common,2,Manufactured,2,25,17,manufacturing
+Tau Grade Rheostat,,Uncommon,2,Manufactured,3,82,32,"energy, reactors"
+Zero Wire,,Common,2,Manufactured,2,52,31,"energy, manufacturing, ships, small arms"
+Drilling Rig,,Rare,3,Manufactured,5,143,29,mining
+Molecular Sieve,,Rare,3,Manufactured,3,91,30,"manufacturing, tech, food, medical"
+Paramagnon Conductor,,Rare,3,Manufactured,4,153,38,"energy, reactors, lasers"
+Positron Battery,,Rare,3,Manufactured,3,133,44,"lasers, em"
+Semimetal Wafer,,Rare,3,Manufactured,4,149,43,"mining, manufacturing"
+Supercooled Magnet,,Rare,3,Manufactured,3,111,35,"energy, ships"
+Zero-G Gimbal,,Rare,3,Manufactured,3,93,33,"ships, missiles"
+Control Rod,,Exotic,4,Manufactured,5,180,40,"ships, manufacturing, tech, energy"
+Microsecond Regulator,,Exotic,4,Manufactured,4,212,49,"small arms, tech"
+Nuclear Fuel Rod,,Exotic,4,Manufactured,5,225,45,energy
+Power Circuit,,Exotic,4,Manufactured,4,195,51,energy
+Sterile Nanotubes,,Exotic,4,Manufactured,3,130,43,shields
+Aldumite Drilling Rig,,Unique,5,Manufactured,7,421,60,mining
+Indicite Wafer,,Unique,5,Manufactured,4,243,61,"tech, mining"
+Rothicite Magnet,,Unique,5,Manufactured,5,295,64,energy
+Substrate Molecule Sieve,,Unique,5,Manufactured,5,274,61,"tech, medical"
+Tasine Superconductor,,Unique,5,Manufactured,5,299,60,energy
+Veryl-Treated Manifold,,Unique,5,Manufactured,5,295,55,"mining, particle"
+Vytinium Fuel Rod,,Unique,5,Manufactured,11,836,76,"energy, reactors, grav"
