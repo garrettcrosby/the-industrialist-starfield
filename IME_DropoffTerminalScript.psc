@@ -135,14 +135,15 @@ MiscObject Property IME_Item_VerylTreatedManifold Auto
 MiscObject Property IME_Item_VytiniumFuelRod      Auto
 
 ; Display result globals — terminal reads these after Fulfill() fires
-; 0 = no result yet, 1 = success, 2 = insufficient cargo, 3 = no contracts, 4 = expired
+; 0=none, 1=complete, 2=insufficient (zero in inventory), 3=no contract/item, 4=expired, 5=partial accepted
 GlobalVariable Property IME_DropoffResultGlobal   Auto
 
 ; Display scratch for the result page
-String Property IME_DropoffResult_ResourceName = "" Auto
-String Property IME_DropoffResult_Company      = "" Auto
-String Property IME_DropoffResult_Payout       = "" Auto
-String Property IME_DropoffResult_RepGained    = "" Auto
+String Property IME_DropoffResult_ResourceName    = "" Auto
+String Property IME_DropoffResult_Company         = "" Auto
+String Property IME_DropoffResult_Payout          = "" Auto
+String Property IME_DropoffResult_RepGained       = "" Auto
+String Property IME_DropoffResult_PartialProgress = "" Auto  ; e.g. "47 / 200" — shown on partial result page
 
 ; ── STATE ─────────────────────────────────────────────────────────────────────
 
@@ -168,7 +169,7 @@ GlobalVariable[] Property IME_Local_Visible Auto  ; [4]
 ; ═══════════════════════════════════════════════════════════════════════════════
 
 Event OnActivate(ObjectReference akActionRef)
-    IME_DropoffResultGlobal.SetValueInt(0)
+    IME_DropoffResultGlobal.SetValue(0.0)
     FindLocalContracts()
     UpdateLocalDisplay()
 EndEvent
@@ -215,13 +216,13 @@ Function UpdateLocalDisplay()
             IME_Local_Progress[di]       = progress
             IME_Local_Company[di]        = MainScript.IME_Slots[slotIdx].companyName
             IME_Local_HoursRemaining[di] = hoursRem as String
-            IME_Local_Visible[di].SetValueInt(1)
+            IME_Local_Visible[di].SetValue(1.0)
         Else
             IME_Local_ResourceName[di]   = ""
             IME_Local_Progress[di]       = ""
             IME_Local_Company[di]        = ""
             IME_Local_HoursRemaining[di] = ""
-            IME_Local_Visible[di].SetValueInt(0)
+            IME_Local_Visible[di].SetValue(0.0)
         EndIf
         di += 1
     EndWhile
@@ -243,7 +244,7 @@ EndFunction
 ; Called when player confirms delivery
 Function AttemptFulfill()
     If IME_SelectedContractSlot < 0
-        IME_DropoffResultGlobal.SetValueInt(3)  ; no contract selected
+        IME_DropoffResultGlobal.SetValue(3.0)  ; no contract selected
         Return
     EndIf
 
@@ -253,76 +254,92 @@ Function AttemptFulfill()
     ; Check deadline first
     If Utility.GetCurrentGameTime() > MainScript.IME_Slots[slotIdx].deadlineGameTime
         MainScript.FailContract(slotIdx)
-        IME_DropoffResultGlobal.SetValueInt(4)  ; expired
+        IME_DropoffResultGlobal.SetValue(4.0)  ; expired
         FindLocalContracts()
         UpdateLocalDisplay()
         Return
     EndIf
 
-    ; Get required item and quantity
     String resName = MainScript.IME_Slots[slotIdx].resourceName
     Int required   = MainScript.IME_Slots[slotIdx].quantity
     MiscObject itemForm = GetItemFormForResource(resName)
 
     If itemForm == None
-        ; Item form not wired — log and bail gracefully
         Debug.Trace("IME_DropoffTerminal: No item form found for " + resName)
-        IME_DropoffResultGlobal.SetValueInt(3)
+        IME_DropoffResultGlobal.SetValue(3.0)
         Return
     EndIf
 
-    ; Check player has enough
-    Int playerHas = player.GetItemCount(itemForm)
-    If playerHas < required
-        ; Update display to show shortfall
-        IME_DropoffResult_ResourceName = resName
-        IME_DropoffResultGlobal.SetValueInt(2)  ; insufficient cargo
-        Return
-    EndIf
-
-    ; Remove items from player
-    player.RemoveItem(itemForm, required, True)
-
-    ; Update quest delivery count
+    ; Find contract quest once — reused below
     Int qi = FindContractQuest(slotIdx)
+    IME_ContractQuestScript cs = None
     If qi >= 0
-        IME_ContractQuestScript cs = MainScript.IME_ContractQuests[qi] as IME_ContractQuestScript
-        If cs
-            cs.AddDelivery(required)
-        EndIf
+        cs = MainScript.IME_ContractQuests[qi] as IME_ContractQuestScript
     EndIf
 
-    ; Capture display values before slot is cleared
-    Int payout = MainScript.IME_Slots[slotIdx].awardedPrice
+    Int alreadyDelivered = 0
+    If cs
+        alreadyDelivered = cs.QuantityDelivered
+    EndIf
+    Int stillNeeded = required - alreadyDelivered
+
+    ; Reject if player has nothing to deliver
+    Int playerHas = player.GetItemCount(itemForm)
+    If playerHas <= 0
+        IME_DropoffResult_ResourceName = resName
+        IME_DropoffResultGlobal.SetValue(2.0)  ; insufficient cargo
+        Return
+    EndIf
+
+    ; Deliver as much as player has, capped at what's still needed
+    Int toDeliver = playerHas
+    If toDeliver > stillNeeded
+        toDeliver = stillNeeded
+    EndIf
+
+    player.RemoveItem(itemForm, toDeliver, True)
+
+    Bool complete = False
+    If cs
+        complete = cs.AddDelivery(toDeliver)
+    EndIf
+
     IME_DropoffResult_ResourceName = resName
     IME_DropoffResult_Company      = MainScript.IME_Slots[slotIdx].companyName
-    IME_DropoffResult_Payout       = FormatCredits(payout)
 
-    ; Calculate what rep will be awarded (before fulfillment clears the slot)
-    Int tier     = MainScript.IME_Slots[slotIdx].resourceTier
-    Int bidType  = MainScript.IME_Slots[slotIdx].bidType
-    Float awarded  = MainScript.IME_Slots[slotIdx].awardedGameTime
-    Float deadline = MainScript.IME_Slots[slotIdx].deadlineGameTime
-    ; Rep display is approximate — computed here before FulfillContract modifies rep
-    Int flatRep = MainScript.GetTierRepComplete(tier)
-    Float timeRem = (deadline - Utility.GetCurrentGameTime()) * 24.0
-    Float totalWindow = (deadline - awarded) * 24.0
-    Float earlyFrac = 0.0
-    If totalWindow > 0.0
-        earlyFrac = timeRem / totalWindow
-        If earlyFrac > 1.0
-            earlyFrac = 1.0
+    If complete
+        ; Full delivery — capture payout and rep display, then fulfill
+        Int payout = MainScript.IME_Slots[slotIdx].awardedPrice
+        IME_DropoffResult_Payout = FormatCredits(payout)
+
+        Int tier      = MainScript.IME_Slots[slotIdx].resourceTier
+        Float awarded = MainScript.IME_Slots[slotIdx].awardedGameTime
+        Float deadline = MainScript.IME_Slots[slotIdx].deadlineGameTime
+        Int flatRep   = MainScript.GetTierRepComplete(tier)
+        Float timeRem = (deadline - Utility.GetCurrentGameTime()) * 24.0
+        Float totalWindow = (deadline - awarded) * 24.0
+        Float earlyFrac = 0.0
+        If totalWindow > 0.0
+            earlyFrac = timeRem / totalWindow
+            If earlyFrac > 1.0
+                earlyFrac = 1.0
+            EndIf
         EndIf
+        Int earlyBonus = (earlyFrac * (flatRep as Float * MainScript.IME_EarlyBonusFraction)) as Int
+        IME_DropoffResult_RepGained       = "+" + (flatRep + earlyBonus) as String
+        IME_DropoffResult_PartialProgress = ""
+
+        MainScript.FulfillContract(slotIdx, player as ObjectReference)
+        IME_DropoffResultGlobal.SetValue(1.0)  ; complete
+    Else
+        ; Partial delivery accepted — show running total, no payout yet
+        Int newDelivered = alreadyDelivered + toDeliver
+        IME_DropoffResult_Payout          = ""
+        IME_DropoffResult_RepGained       = ""
+        IME_DropoffResult_PartialProgress = (newDelivered as String) + " / " + (required as String)
+        IME_DropoffResultGlobal.SetValue(5.0)  ; partial accepted
     EndIf
-    Int earlyBonus = (earlyFrac * (flatRep as Float * MainScript.IME_EarlyBonusFraction)) as Int
-    IME_DropoffResult_RepGained = "+" + (flatRep + earlyBonus) as String
 
-    ; Hand off to main script for payout and rep application
-    MainScript.FulfillContract(slotIdx, player as ObjectReference)
-
-    IME_DropoffResultGlobal.SetValueInt(1)  ; success
-
-    ; Refresh local display
     IME_SelectedContractSlot = -1
     FindLocalContracts()
     UpdateLocalDisplay()
@@ -483,10 +500,6 @@ MiscObject Function GetItemFormForResource(String asResourceName)
         Return IME_Item_LuxuryTextile
     ElseIf asResourceName == "Memory Substrate"
         Return IME_Item_MemorySubstrate
-    ElseIf asResourceName == "Neurologic"
-        Return IME_Item_Neurologic
-    ElseIf asResourceName == "Quark-Degenerate Tissues"
-        Return IME_Item_QuarkDegenerateTissues
     ; Manufactured - Tier 2
     ElseIf asResourceName == "Adaptive Frame"
         Return IME_Item_AdaptiveFrame

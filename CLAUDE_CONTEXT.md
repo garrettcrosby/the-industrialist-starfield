@@ -56,7 +56,7 @@ String  rarity          ; "Common" / "Uncommon" / "Rare" / "Exotic" / "Unique"
 ```
 
 **`ActiveOrder` struct** (defined in `IME_MainQuestScript`):
-Active board slots. Array of 11 (`IME_MaxSlots`). Each slot is either empty, open (visible on board), or awarded (active contract). Key fields:
+Active board slots. Array of 12 (`IME_MaxSlots`). Each slot is either empty, open (visible on board), or awarded (active contract). Key fields:
 - `isActive` + `isAwarded` together determine slot state
 - `fairPrice` = qty × baseValue × urgencyPriceMult (computed at populate time)
 - `awardedPrice` = fairPrice × bidMultiplier (set at bid time)
@@ -87,13 +87,13 @@ Tier is used for: rep award/penalty calculation, win probability gate multiplier
 ### Board Slot Distribution
 
 Each 24-hour refresh generates:
-- T1: 3-4 slots (random)
+- T1: 1-3 slots (random)
 - T2: 2-3 slots (random)
-- T3: 1-2 slots (random)
-- T4: 1 slot
+- T3: 2-3 slots (random)
+- T4: 1-2 slots (random)
 - T5: 0-1 slots (30% chance)
 
-Total: 8-11 slots. Awarded (active) slots are never overwritten on refresh — they persist until completed or failed.
+Total: 6-12 slots (max 12). Awarded (active) slots are never overwritten on refresh — they persist until completed or failed.
 
 ### Bid System
 
@@ -122,12 +122,13 @@ floor: total minimum 1
 
 ### Urgency System
 
-Rolled at slot population time:
-- **Normal (60%):** 1.0× deadline, 1.0× price
-- **Tight (30%):** 0.65× deadline, 1.25× price
+Rolled at slot population time (tier numbering: 0=Relaxed, 1=Normal, 2=Tight, 3=Rush):
+- **Relaxed (10%):** 1.40× deadline, 0.75× price
+- **Normal (60%):** 1.00× deadline, 1.00× price
+- **Tight (20%):** 0.65× deadline, 1.25× price
 - **Rush (10%):** 0.40× deadline, 1.50× price
 
-The urgency label `[RUSH]` / `[TIGHT]` is prepended to the terminal listing entry. This is the only source of runtime variance in the system — everything else is pre-baked.
+The urgency label `[RELAXED]` / `[TIGHT]` / `[RUSH]` is prepended to the terminal listing entry; Normal has no label. This is the only source of runtime variance in the system — everything else is pre-baked.
 
 ---
 

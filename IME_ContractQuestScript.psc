@@ -68,10 +68,11 @@ Function InitContract(Int aiSlotIndex)
     SetCurrentStageID(STAGE_ACTIVE)
 
     ; Begin deadline monitoring
-    RegisterForUpdateGameTime(DeadlineCheckInterval)
+    StartTimer(60.0, 1)
 EndFunction
 
-Event OnUpdateGameTime()
+; Fires every 60 real seconds — checks game time internally for deadline
+Event OnTimer(Int aiTimerID)
     If GetCurrentStageID() != STAGE_ACTIVE
         Return
     EndIf
@@ -80,11 +81,11 @@ Event OnUpdateGameTime()
     If Utility.GetCurrentGameTime() > DeadlineGameTime
         ; Main script handles rep penalty and slot cleanup
         MainScript.FailContract(SlotIndex)
-        ; FailContract() calls back to FailContract() on this script
+        ; FailContract() calls back to FailContract() on this script — do not re-register
         Return
     EndIf
 
-    RegisterForUpdateGameTime(DeadlineCheckInterval)
+    StartTimer(60.0, 1)
 EndEvent
 
 ; ═══════════════════════════════════════════════════════════════════════════════
@@ -92,13 +93,11 @@ EndEvent
 ; ═══════════════════════════════════════════════════════════════════════════════
 
 Function CompleteContract()
-    UnregisterForUpdateGameTime()
     SetCurrentStageID(STAGE_COMPLETE)
     SlotIndex = -1
 EndFunction
 
 Function FailContract()
-    UnregisterForUpdateGameTime()
     SetCurrentStageID(STAGE_FAILED)
     SlotIndex = -1
 EndFunction

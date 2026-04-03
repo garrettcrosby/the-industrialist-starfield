@@ -5,8 +5,9 @@
 ; Responsibilities:
 ;   - Owns all active slot state and job pool arrays
 ;   - Drives the 24-hour board refresh timer
+;   - Starts and stops IME_JobQuestScript instances as slots populate/clear
 ;   - Handles bid resolution, fulfillment, failure, and reputation
-;   - Exposes functions called by terminal and dropoff scripts
+;   - Exposes functions called by board activator and dropoff scripts
 ;
 ; Architecture note:
 ;   Job data lives in static pre-generated arrays populated by IME_DataInit.
@@ -56,6 +57,9 @@ EndStruct
 ; ── EXTERNAL SCRIPT REFERENCES — wire in CK ──────────────────────────────────
 
 IME_DataInit Property DataInit Auto
+
+; Currency form — wire to Starfield credits MiscObject in CK
+MiscObject Property Credits Auto
 
 ; ── CONSTANTS — tune these without touching logic ─────────────────────────────
 
@@ -109,28 +113,33 @@ Float Property IME_TierGate_T3  = 0.50  AutoReadOnly
 Float Property IME_TierGate_T4  = 0.25  AutoReadOnly
 Float Property IME_TierGate_T5  = 0.10  AutoReadOnly
 
-; Urgency tier weights (out of 100): Normal 60%, Tight 30%, Rush 10%
-Int Property IME_UrgencyWeight_Normal = 60 AutoReadOnly
-Int Property IME_UrgencyWeight_Tight  = 30 AutoReadOnly
+; Urgency tier weights (out of 100): Relaxed 10%, Normal 60%, Tight 20%, Rush 10% (remainder)
+; Tier numbering: 0=Relaxed, 1=Normal, 2=Tight, 3=Rush
+Int Property IME_UrgencyWeight_Relaxed = 10 AutoReadOnly
+Int Property IME_UrgencyWeight_Normal  = 60 AutoReadOnly
+Int Property IME_UrgencyWeight_Tight   = 20 AutoReadOnly
 
 ; Urgency deadline multipliers (fraction of pre-baked deadline hours)
-Float Property IME_UrgencyDeadlineMult_Normal = 1.00 AutoReadOnly
-Float Property IME_UrgencyDeadlineMult_Tight  = 0.65 AutoReadOnly
-Float Property IME_UrgencyDeadlineMult_Rush   = 0.40 AutoReadOnly
+Float Property IME_UrgencyDeadlineMult_Relaxed = 1.40 AutoReadOnly
+Float Property IME_UrgencyDeadlineMult_Normal  = 1.00 AutoReadOnly
+Float Property IME_UrgencyDeadlineMult_Tight   = 0.85 AutoReadOnly
+Float Property IME_UrgencyDeadlineMult_Rush    = 0.65 AutoReadOnly
 
 ; Urgency price multipliers
-Float Property IME_UrgencyPriceMult_Normal    = 1.00 AutoReadOnly
-Float Property IME_UrgencyPriceMult_Tight     = 1.25 AutoReadOnly
-Float Property IME_UrgencyPriceMult_Rush      = 1.50 AutoReadOnly
+Float Property IME_UrgencyPriceMult_Relaxed = 0.75 AutoReadOnly
+Float Property IME_UrgencyPriceMult_Normal  = 1.00 AutoReadOnly
+Float Property IME_UrgencyPriceMult_Tight   = 1.25 AutoReadOnly
+Float Property IME_UrgencyPriceMult_Rush    = 1.50 AutoReadOnly
 
 ; Slot distribution per refresh cycle
-Int Property IME_SlotDist_T1_Min    = 3  AutoReadOnly
-Int Property IME_SlotDist_T1_Max    = 4  AutoReadOnly
+Int Property IME_SlotDist_T1_Min    = 1  AutoReadOnly
+Int Property IME_SlotDist_T1_Max    = 3  AutoReadOnly
 Int Property IME_SlotDist_T2_Min    = 2  AutoReadOnly
 Int Property IME_SlotDist_T2_Max    = 3  AutoReadOnly
-Int Property IME_SlotDist_T3_Min    = 1  AutoReadOnly
-Int Property IME_SlotDist_T3_Max    = 2  AutoReadOnly
-Int Property IME_SlotDist_T4        = 1  AutoReadOnly
+Int Property IME_SlotDist_T3_Min    = 2  AutoReadOnly
+Int Property IME_SlotDist_T3_Max    = 3  AutoReadOnly
+Int Property IME_SlotDist_T4_Min    = 1  AutoReadOnly
+Int Property IME_SlotDist_T4_Max    = 2  AutoReadOnly
 Int Property IME_SlotDist_T5_Chance = 30 AutoReadOnly  ; % chance of a T5 slot
 
 ; Board refresh interval in in-game hours
@@ -139,8 +148,8 @@ Float Property IME_RefreshIntervalHours = 24.0 AutoReadOnly
 ; Max concurrent awarded contracts
 Int Property IME_MaxAwardedContracts = 4 AutoReadOnly
 
-; Maximum total board slots: T1_Max(4) + T2_Max(3) + T3_Max(2) + T4(1) + T5(1) = 11
-Int Property IME_MaxSlots = 11 AutoReadOnly
+; Maximum total board slots: T1_Max(3) + T2_Max(3) + T3_Max(3) + T4(2) + T5(1) = 12
+Int Property IME_MaxSlots = 12 AutoReadOnly
 
 ; Debug logging toggle — set False before release
 Bool Property IME_DebugLogging = True Auto
@@ -150,42 +159,56 @@ Bool Property IME_DebugLogging = True Auto
 GlobalVariable Property IME_Reputation      Auto
 GlobalVariable Property IME_LastRefreshTime Auto
 
+; Bid price globals — updated just before the bid message is shown.
+; IME_BidSelectMessage text uses <Global=IME_BidGlobal_Low> etc. as tokens.
+GlobalVariable Property IME_BidGlobal_Low  Auto Const Mandatory
+GlobalVariable Property IME_BidGlobal_Fair Auto Const Mandatory
+GlobalVariable Property IME_BidGlobal_High Auto Const Mandatory
+
+; ── BID MESSAGES — wire in CK ────────────────────────────────────────────────
+
+; Four-button message: Lowball (0), Fair Offer (1), High Bid (2), Cancel (3)
+Message Property IME_BidSelectMessage Auto Const Mandatory
+
+; Shown after bid resolves
+Message Property IME_BidWinMessage  Auto Const Mandatory
+Message Property IME_BidLoseMessage Auto Const Mandatory
+
 ; ── QUEST REFERENCES — wire in CK ────────────────────────────────────────────
 
-Quest[] Property IME_ContractQuests Auto
+; 12 job quests (IME_JobQuest_00 through IME_JobQuest_11) — one per board slot
+IME_JobQuestScript[] Property IME_JobQuests Auto Const Mandatory
+
+; 4 contract tracking quests (IME_Contract_00 through IME_Contract_03)
+IME_ContractQuestScript[] Property IME_ContractQuests Auto
 
 ; ── JOB POOL ARRAYS — populated by IME_DataInit.InitAll() ────────────────────
 
-JobTemplate[] IME_JobPool_T1
-JobTemplate[] IME_JobPool_T2
-JobTemplate[] IME_JobPool_T3
-JobTemplate[] IME_JobPool_T4
-JobTemplate[] IME_JobPool_T5
+JobTemplate[] Property IME_JobPool_T1 Auto
+JobTemplate[] Property IME_JobPool_T2 Auto
+JobTemplate[] Property IME_JobPool_T3 Auto
+JobTemplate[] Property IME_JobPool_T4 Auto
+JobTemplate[] Property IME_JobPool_T5 Auto
 
-Int IME_Tier1_JobCount = 0
-Int IME_Tier2_JobCount = 0
-Int IME_Tier3_JobCount = 0
-Int IME_Tier4_JobCount = 0
-Int IME_Tier5_JobCount = 0
+Int Property IME_Tier1_JobCount = 0 Auto
+Int Property IME_Tier2_JobCount = 0 Auto
+Int Property IME_Tier3_JobCount = 0 Auto
+Int Property IME_Tier4_JobCount = 0 Auto
+Int Property IME_Tier5_JobCount = 0 Auto
 
 ; ── COMPANY DATA — populated by IME_DataInit.InitCompanyData() ───────────────
 
-Int      IME_CompanyCount = 0
-String[] IME_CompanyNames
-Int[]    IME_CompanySettlement
+Int Property      IME_CompanyCount = 0 Auto
+String[] Property IME_CompanyNames Auto
+Int[] Property    IME_CompanySettlement Auto
 
 ; ── ACTIVE BOARD STATE ───────────────────────────────────────────────────────
 
-ActiveOrder[] IME_Slots
+ActiveOrder[] Property IME_Slots Auto
 
 ; ── SETTLEMENT NAMES ─────────────────────────────────────────────────────────
 
-String[] IME_SettlementNames
-
-; ── BID RESULT SCRATCH — read by exchange terminal after BidOnSlot() ─────────
-
-Bool Property IME_LastBidResult    = False Auto
-Int  Property IME_LastBidSlotIndex = -1    Auto
+String[] Property IME_SettlementNames Auto
 
 ; ═══════════════════════════════════════════════════════════════════════════════
 ; LIFECYCLE
@@ -203,23 +226,24 @@ Event OnInit()
     InitSettlementNames()
     InitSlots()
 
-    IME_Reputation.SetValueInt(0)
-    IME_LastRefreshTime.SetValueFloat(0.0)
+    IME_Reputation.SetValue(0.0)
+    IME_LastRefreshTime.SetValue(0.0)
 
     PopulateSlots()
-    RegisterForUpdateGameTime(IME_RefreshIntervalHours)
+    StartTimer(60.0, 1)
 
     IMELog("OnInit complete")
 EndEvent
 
-Event OnUpdateGameTime()
+; Fires every 60 real seconds — checks game time internally for refresh and deadlines
+Event OnTimer(Int aiTimerID)
     CheckDeadlines()
     Float lastRefresh = IME_LastRefreshTime.GetValue() as Float
     Float currentTime = Utility.GetCurrentGameTime()
     If (currentTime - lastRefresh) >= (IME_RefreshIntervalHours / 24.0)
         PopulateSlots()
     EndIf
-    RegisterForUpdateGameTime(IME_RefreshIntervalHours)
+    StartTimer(60.0, 1)
 EndEvent
 
 ; ═══════════════════════════════════════════════════════════════════════════════
@@ -227,9 +251,9 @@ EndEvent
 ; ═══════════════════════════════════════════════════════════════════════════════
 
 Function InitSlots()
-    IME_Slots = new ActiveOrder[11]
+    IME_Slots = new ActiveOrder[12]
     Int i = 0
-    While i < 11
+    While i < 12
         IME_Slots[i] = new ActiveOrder
         IME_Slots[i].isActive  = False
         IME_Slots[i].isAwarded = False
@@ -250,7 +274,7 @@ Function PopulateSlots()
     Int t1Count = Utility.RandomInt(IME_SlotDist_T1_Min, IME_SlotDist_T1_Max)
     Int t2Count = Utility.RandomInt(IME_SlotDist_T2_Min, IME_SlotDist_T2_Max)
     Int t3Count = Utility.RandomInt(IME_SlotDist_T3_Min, IME_SlotDist_T3_Max)
-    Int t4Count = IME_SlotDist_T4
+    Int t4Count = Utility.RandomInt(IME_SlotDist_T4_Min, IME_SlotDist_T4_Max)
     Int t5Count = 0
     If Utility.RandomInt(1, 100) <= IME_SlotDist_T5_Chance
         t5Count = 1
@@ -266,7 +290,7 @@ Function PopulateSlots()
     slotIdx = FillTierSlots(4, t4Count, slotIdx)
     slotIdx = FillTierSlots(5, t5Count, slotIdx)
 
-    IME_LastRefreshTime.SetValueFloat(Utility.GetCurrentGameTime())
+    IME_LastRefreshTime.SetValue(Utility.GetCurrentGameTime())
 EndFunction
 
 Int Function FillTierSlots(Int aiTier, Int aiCount, Int aiStartSlot)
@@ -324,9 +348,18 @@ Function PopulateSingleSlot(Int aiTier, Int aiSlotIndex)
            " x" + job.quantity + " → " + job.companyName + \
            " | fair=" + fairPrice + " urgency=" + urgency + \
            " hours=" + (finalHours as Int))
+
+    ; Start the corresponding job quest and populate its display globals
+    If !IME_JobQuests[aiSlotIndex].IsRunning()
+        IME_JobQuests[aiSlotIndex].Start()
+    EndIf
+    IME_JobQuests[aiSlotIndex].InitJobQuest(aiSlotIndex)
 EndFunction
 
 Function ClearSlot(Int aiSlotIndex)
+    If IME_JobQuests[aiSlotIndex].IsRunning() && !IME_JobQuests[aiSlotIndex].PlayerAcceptedQuest
+        IME_JobQuests[aiSlotIndex].ClearJobQuest()
+    EndIf
     IME_Slots[aiSlotIndex].isActive  = False
     IME_Slots[aiSlotIndex].isAwarded = False
 EndFunction
@@ -344,8 +377,6 @@ Bool Function BidOnSlot(Int aiSlotIndex, Int aiBidType)
     EndIf
     If GetAwardedContractCount() >= IME_MaxAwardedContracts
         IMELog("BidOnSlot[" + aiSlotIndex + "] rejected — at max contracts")
-        IME_LastBidResult    = False
-        IME_LastBidSlotIndex = aiSlotIndex
         Return False
     EndIf
 
@@ -358,9 +389,6 @@ Bool Function BidOnSlot(Int aiSlotIndex, Int aiBidType)
            " bidType=" + aiBidType + \
            " rep=" + (IME_Reputation.GetValue() as Int) + \
            " winChance=" + winChance + " roll=" + roll + " won=" + won)
-
-    IME_LastBidResult    = won
-    IME_LastBidSlotIndex = aiSlotIndex
 
     If won
         Float bidMult    = GetBidPriceMult(aiBidType)
@@ -429,7 +457,7 @@ Bool Function FulfillContract(Int aiSlotIndex, ObjectReference akPlayerRef)
     EndIf
 
     Int payout = IME_Slots[aiSlotIndex].awardedPrice
-    Game.GetPlayer().AddItem(Gold001, payout)
+    Game.GetPlayer().AddItem(Credits, payout)
 
     IMELog("FulfillContract[" + aiSlotIndex + "] — " + \
            IME_Slots[aiSlotIndex].resourceName + \
@@ -527,7 +555,7 @@ Function ModifyReputation(Int aiAmount)
     ElseIf newVal < IME_Rep_Min
         newVal = IME_Rep_Min
     EndIf
-    IME_Reputation.SetValueInt(newVal)
+    IME_Reputation.SetValue(newVal as Float)
     IMELog("Reputation: " + current + " + " + aiAmount + " = " + newVal)
 EndFunction
 
@@ -536,10 +564,12 @@ EndFunction
 ; ═══════════════════════════════════════════════════════════════════════════════
 
 String Function GetUrgencyLabel(Int aiUrgencyTier)
-    If aiUrgencyTier == 2
+    If aiUrgencyTier == 3
         Return "[RUSH] "
-    ElseIf aiUrgencyTier == 1
+    ElseIf aiUrgencyTier == 2
         Return "[TIGHT] "
+    ElseIf aiUrgencyTier == 0
+        Return "[RELAXED] "
     Else
         Return ""
     EndIf
@@ -673,19 +703,23 @@ EndFunction
 
 Int Function RollUrgencyTier()
     Int roll = Utility.RandomInt(1, 100)
-    If roll <= IME_UrgencyWeight_Normal
-        Return 0
-    ElseIf roll <= (IME_UrgencyWeight_Normal + IME_UrgencyWeight_Tight)
-        Return 1
+    If roll <= IME_UrgencyWeight_Relaxed
+        Return 0  ; Relaxed
+    ElseIf roll <= (IME_UrgencyWeight_Relaxed + IME_UrgencyWeight_Normal)
+        Return 1  ; Normal
+    ElseIf roll <= (IME_UrgencyWeight_Relaxed + IME_UrgencyWeight_Normal + IME_UrgencyWeight_Tight)
+        Return 2  ; Tight
     Else
-        Return 2
+        Return 3  ; Rush
     EndIf
 EndFunction
 
 Float Function GetUrgencyPriceMult(Int aiUrgency)
     If aiUrgency == 0
-        Return IME_UrgencyPriceMult_Normal
+        Return IME_UrgencyPriceMult_Relaxed
     ElseIf aiUrgency == 1
+        Return IME_UrgencyPriceMult_Normal
+    ElseIf aiUrgency == 2
         Return IME_UrgencyPriceMult_Tight
     Else
         Return IME_UrgencyPriceMult_Rush
@@ -694,8 +728,10 @@ EndFunction
 
 Float Function GetUrgencyDeadlineMult(Int aiUrgency)
     If aiUrgency == 0
-        Return IME_UrgencyDeadlineMult_Normal
+        Return IME_UrgencyDeadlineMult_Relaxed
     ElseIf aiUrgency == 1
+        Return IME_UrgencyDeadlineMult_Normal
+    ElseIf aiUrgency == 2
         Return IME_UrgencyDeadlineMult_Tight
     Else
         Return IME_UrgencyDeadlineMult_Rush
@@ -730,20 +766,14 @@ EndFunction
 
 Function ActivateContractQuest(Int aiQuestIndex, Int aiSlotIndex)
     IME_ContractQuests[aiQuestIndex].Start()
-    IME_ContractQuestScript contractScript = IME_ContractQuests[aiQuestIndex] as IME_ContractQuestScript
-    If contractScript
-        contractScript.InitContract(aiSlotIndex)
-    Else
-        IMELog("ActivateContractQuest — WARNING: cast failed for quest " + aiQuestIndex)
-    EndIf
+    IME_ContractQuests[aiQuestIndex].InitContract(aiSlotIndex)
 EndFunction
 
 Function CompleteContractQuestForSlot(Int aiSlotIndex)
     Int i = 0
     While i < IME_ContractQuests.Length
-        IME_ContractQuestScript cs = IME_ContractQuests[i] as IME_ContractQuestScript
-        If cs && cs.SlotIndex == aiSlotIndex
-            cs.CompleteContract()
+        If IME_ContractQuests[i].SlotIndex == aiSlotIndex
+            IME_ContractQuests[i].CompleteContract()
             Return
         EndIf
         i += 1
@@ -754,9 +784,8 @@ EndFunction
 Function FailContractQuestForSlot(Int aiSlotIndex)
     Int i = 0
     While i < IME_ContractQuests.Length
-        IME_ContractQuestScript cs = IME_ContractQuests[i] as IME_ContractQuestScript
-        If cs && cs.SlotIndex == aiSlotIndex
-            cs.FailContract()
+        If IME_ContractQuests[i].SlotIndex == aiSlotIndex
+            IME_ContractQuests[i].FailContract()
             Return
         EndIf
         i += 1
